@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react'
 
 const snorlaxImg = '/snorlax.png'
 
-const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+const navLinks = ['Home', 'About', 'Skills', 'Tools', 'Projects', 'Contact']
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)

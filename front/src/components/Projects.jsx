@@ -16,12 +16,21 @@ export default function Projects() {
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(({ id, title, description, tags }) => (
+          {projects.map(({ id, logo, title, description, tags }) => (
             <div
               key={id}
               className="group bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:bg-white/10 hover:border-indigo-400/30 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col"
             >
               <div className="flex-1">
+                {logo && (
+                  <div className="mb-4">
+                    <img
+                      src={logo}
+                      alt={`${title} logo`}
+                      className="w-20 h-20 rounded-2xl object-contain bg-white/5 border border-white/10 p-1.5"
+                    />
+                  </div>
+                )}
                 <h3 className="text-white font-bold text-xl mb-3">{title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed mb-4">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">

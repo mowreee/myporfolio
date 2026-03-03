@@ -34,6 +34,13 @@ export default function ProjectDetail() {
 
         {/* Header */}
         <div className="mb-10">
+          {project.logo && (
+            <img
+              src={project.logo}
+              alt={`${project.title} logo`}
+              className="w-28 h-28 rounded-3xl object-contain bg-white/5 border border-white/10 p-2 mb-6"
+            />
+          )}
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map(tag => (
               <span
