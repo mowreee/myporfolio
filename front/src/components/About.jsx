@@ -65,7 +65,6 @@ export default function About() {
                 ['Name', 'Marc Christian Calamug Delos Santos'],
                 ['Role', 'Frontend / UI·UX Developer'],
                 ['Location', 'Bayombong, Nueva Vizcaya, Philippines'],
-                ['Available', 'Freelance / Full-time'],
               ].map(([label, value]) => (
                 <div key={label}>
                   <span className="text-indigo-300 text-xs font-semibold uppercase tracking-wider">{label}</span>
