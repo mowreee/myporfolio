@@ -43,14 +43,6 @@ export default function Hero() {
           />
         </h1>
 
-        <BlurText
-          text="A passionate developer building clean, modern, and user-friendly web experiences."
-          className="text-gray-300 text-lg sm:text-xl mb-10 leading-relaxed justify-center"
-          delay={40}
-          direction="bottom"
-          stepDuration={0.3}
-        />
-
         <div className="flex flex-wrap gap-4 justify-center">
           <a
             href="#projects"

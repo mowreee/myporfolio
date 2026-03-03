@@ -53,7 +53,6 @@ export default function Skills() {
           delay={60}
           stepDuration={0.4}
         />
-        <p className="text-center text-white/40 text-sm mb-12">Core competencies I bring to every project</p>
 
         <div className="grid sm:grid-cols-2 gap-6">
           {skills.map(({ name, tagline, desc, color, border, glow, accent }, i) => (

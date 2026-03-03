@@ -82,9 +82,6 @@ export default function Contact() {
           delay={60}
           stepDuration={0.4}
         />
-        <p className="text-white/40 text-center text-sm mb-14">
-          Have a project in mind or just want to say hi? I'd love to hear from you.
-        </p>
 
         <div className="grid lg:grid-cols-5 gap-8 items-start">
 
