@@ -5,6 +5,8 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Tools from './components/Tools'
 import Projects from './components/Projects'
+import RelevantCourses from './components/RelevantCourses'
+import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ProjectDetail from './pages/ProjectDetail'
@@ -16,8 +18,10 @@ function Home() {
       <Hero />
       <About />
       <Skills />
-      <Tools />
       <Projects />
+      <RelevantCourses />
+      <Tools />
+      <Certifications />
       <Contact />
       <Footer />
     </div>

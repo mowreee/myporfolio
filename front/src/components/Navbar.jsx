@@ -3,7 +3,16 @@ import { motion, AnimatePresence } from 'motion/react'
 
 const snorlaxImg = '/snorlax.png'
 
-const navLinks = ['Home', 'About', 'Skills', 'Tools', 'Projects', 'Contact']
+const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Courses', 'Tools', 'Certifications', 'Contact']
+
+const NAVBAR_OFFSET = 80
+
+function scrollToSection(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET
+  window.scrollTo({ top, behavior: 'smooth' })
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -14,20 +23,28 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
 
-      const sections = navLinks.map((link) => document.getElementById(link.toLowerCase()))
-      const scrollY = window.scrollY + 80
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        if (sections[i] && sections[i].offsetTop <= scrollY) {
-          setActive(navLinks[i])
-          break
+      let current = 'Home'
+      for (const link of navLinks) {
+        const el = document.getElementById(link.toLowerCase())
+        if (!el) continue
+        const rect = el.getBoundingClientRect()
+        if (rect.top <= NAVBAR_OFFSET + 10) {
+          current = link
         }
       }
+      setActive(current)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleNavClick = (e, link) => {
+    e.preventDefault()
+    setActive(link)
+    scrollToSection(link.toLowerCase())
+  }
 
   return (
     <>
@@ -110,7 +127,7 @@ export default function Navbar() {
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
-                    onClick={() => { setActive(link); setOpen(false) }}
+                    onClick={(e) => { handleNavClick(e, link); setOpen(false) }}
                     className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                       active === link
                         ? 'bg-indigo-500/20 text-white border border-indigo-400/20'
